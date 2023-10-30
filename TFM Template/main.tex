@@ -1,0 +1,64 @@
+\documentclass[11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{preamblepkg}
+\addbibresource{references.bib}
+
+%--------- Informacion para portada --------%
+\thesistitle{ALGO INGENIOSO PARA EL\\TÍTULO DE TRABAJO DE\\FIN DE MÁSTER}
+\thesisdate{MES AÑO}
+\thesisauthor{Nombre del autor}
+\thesisdirector{Nombre del director}
+\thesisdescription{TRABAJO DE FIN DE MÁSTER PARA LA OBTENCIÓN DEL TÍTULO DE MÁSTER EN AUTOMÁTICA Y ROBÓTICA}
+
+% Contenido del encabezado:
+\fancyhead[RO]{Título del TFM} % Drecha en páginas impares (Right Odd)
+\fancyhead[LE]{\nouppercase{\rightmark}} % Izquierda en páginas pares (Left Even).
+%\rightmark inserta automáticamente el título de la sección correspondiente y \nouppercase evita convertirlo todo a mayúscula
+
+% Contenido del pie de página:
+\fancyfoot[RE]{Escuela  Técnica  Superior  de  Ingenieros  Industriales  (UPM)} % Derecha en páginas pares (Right Even)
+\fancyfoot[LO]{\thesisauthor} % Izquierda en páginas impares (Left Odd)
+\fancyfoot[LE,RO]{\thepage} % Número de página a la izquierda en las páginas pares y a la derecha en las impares.
+
+%-------- INICIO DEL DOCUMENTO --------%
+\begin{document}
+\include{beginning/cover}
+
+%--------- PAGINAS DE INICIO ----------%
+\pagenumbering{roman}
+\include{beginning/citation}
+\include{beginning/acknowledgments}
+\include{beginning/abstract}
+
+%-------------- INDICES ---------------%
+% Contenido
+\tableofcontents
+\newpage
+
+% Tablas
+\listoftables
+\newpage
+
+% Figuras
+\listoffigures
+\newpage
+
+%------------- SECCIONES --------------%
+\pagenumbering{arabic}
+\include{sections/introduction/main}
+\include{sections/SoA/main}
+\include{sections/development/main}
+\include{sections/development_2/main}
+\include{sections/results/main}
+\include{sections/conclusions}
+
+%------------ BIBLIOGRAFÍA ------------%
+\appto{\bibsetup}{\sloppy}
+\printbibliography[heading=bibintoc]
+
+%--------------- ANEXOS ---------------%
+\include{appendix/main}
+
+%--------- FIN DEL DOCUMENTO ----------%
+\end{document}

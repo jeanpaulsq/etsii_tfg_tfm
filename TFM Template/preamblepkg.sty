@@ -1,0 +1,85 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{preamblepkg}[2023/10/31 TFG/TFM package]
+
+\RequirePackage[margin=2.5cm, twoside=true]{geometry}
+% Se inserta el comando \raggedbottom para evitar que LaTeX rellene con espacios en blanco aquellas páginas que no alberguen suficiente contenido como para rellenarlas de forma "natural".
+\raggedbottom 
+% ---------------------------------------------- %
+
+% ------------- Paquetes generales ------------- %
+% Se importan distintos paquetes de propósito general:
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[spanish,es-tabla]{babel}
+\RequirePackage{float}
+\RequirePackage{caption}
+\RequirePackage{bold-extra}
+\RequirePackage{xcolor}
+\usepackage{setspace}
+\usepackage{varwidth}
+% ---------------------------------------------- %
+
+% ------------ Paquetes específicos ------------ %
+% Se importan distintos paquetes que será utilizados en momentos concretos del documento: 
+\RequirePackage{amssymb} % Para símbolos matemáticos.
+\RequirePackage{bm} % Para negrita en símbolos matemáticos.
+\RequirePackage{amsmath} % Para el entorno "split".
+\RequirePackage[colorlinks=true,linkcolor=blue]{hyperref} % Para urls.
+\RequirePackage{longtable} % Para tablas largas.
+\RequirePackage{graphicx} % Para insertar imágenes.
+\RequirePackage{afterpage}
+\RequirePackage{minted} % Para codigo
+\RequirePackage{tabularx} % Tablas
+\RequirePackage{colortbl}
+% ---------------------------------------------- %
+
+% ---------------- Numeración ------------------ %
+\counterwithin{table}{section} % Se numeran las tablas con respecto al capítulo en el que se encuentran.
+\counterwithin{figure}{section} % Se numeran las figuras con respecto al capítulo en el que se encuentran.
+\counterwithin{equation}{section} % Se numeran las ecuaciones con respecto al capítulo en el que se encuentran.
+% ---------------------------------------------- %
+
+% ----------- Formato de los párrafos -----------%
+% Se define el formato de los párrafos:
+\setlength{\parindent}{0pt} % Se elimina la sangría en comienzo de párrafo (0pt).
+\setlength{\parskip}{1em} % Se define el espacio entre dos párrafos (1em).
+% ---------------------------------------------- %    
+
+% ------------- Página en blanco ----------------%
+% Se define un comando (\blankpage) para insertar una página totalmente en blanco (sin número de página, encabezado y pie de página)
+\newcommand\blankpage{\null\thispagestyle{empty}\newpage}
+% ---------------------------------------------- %    
+
+% --------- Encabezado y pie de página -------- %
+% El encabezado y pie de página forman parte del paquete fancyhdr:
+\RequirePackage{fancyhdr}
+\fancyhf{}
+\pagestyle{fancy}
+
+% Se ajusta el tamaño de fuente para el encabezado y pie de página (9pt)
+\fancyhf{\fontsize{2}{12}\selectfont}
+\setlength{\headheight}{14.5pt}
+
+% Se indica que sólo se quiere incorporar en \rightmark (utilizado más arriba) el título de la sección (y no de las subsecciones, subsubsecciones, etc.):
+\renewcommand{\sectionmark}[1]{\markright{\thesection. #1}}
+\renewcommand{\subsectionmark}[1]{}
+
+% Formato de la línea de separación horizontal:
+\renewcommand{\headrulewidth}{0.5pt} % Ancho de la línea del encabezado.
+\renewcommand{\footrulewidth}{0.5pt} % Ancho de la línea del pie de página.
+
+% ------------------ Anexos -------------------- %
+\RequirePackage{appendix}
+
+% --------------- Bibliografía ----------------- %
+% El manejo de la bibliografía se realiza mediante el paquete biblatex:
+\RequirePackage[sorting=none, style=numeric]{biblatex}
+% Se importa el paquete csquotes para citar las referencias a lo largo del documento:
+\RequirePackage{csquotes}
+
+% ------------------ Portada ------------------- %
+% Comandos para personalizar los datos de la portada
+\newcommand{\thesistitle}[1]{\renewcommand{\thesistitle}{#1}}
+\newcommand{\thesisdate}[1]{\renewcommand{\thesisdate}{#1}}
+\newcommand{\thesisauthor}[1]{\renewcommand{\thesisauthor}{#1}}
+\newcommand{\thesisdirector}[1]{\renewcommand{\thesisdirector}{#1}}
+\newcommand{\thesisdescription}[1]{\renewcommand{\thesisdescription}{#1}}

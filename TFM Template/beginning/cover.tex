@@ -1,0 +1,37 @@
+\begin{titlepage}
+\definecolor{white}{rgb}{1,1,1}
+\definecolor{white_weak}{rgb}{0.5,0.65,0.85}
+
+\begin{picture}(0,0)
+    % Imagen de fondo
+    \put(-71,-709){\includegraphics[width=\paperwidth, height=\paperheight]{img/master_thesis_cover.jpg}}
+
+    % Título del TFM
+    \put(5,-150){
+        \begin{minipage}{\textwidth}
+            \fontsize{29}{40}\selectfont\color{white}
+            \textbf{\thesistitle}
+        \end{minipage}
+    }
+
+    % Texto informativo
+    \put(-20,-505){
+        \begin{minipage}{0.45\textwidth}
+            \fontsize{14}{19}\selectfont\color{white_weak}
+            \thesisdescription
+        \end{minipage}
+    }
+    
+    
+    % Fecha
+    \put(240,-450){\fontsize{12}{1}\selectfont\color{white}\thesisdate}
+
+    % Autor y tutor del trabajo
+    \put(240,-475){\fontsize{19}{1}\selectfont\color{white}
+        \textbf{\thesisauthor}}
+    \put(240,-510){\fontsize{10}{1}\selectfont\color{white}
+        DIRECTOR DEL TRABAJO FIN DE MASTER}
+    \put(240,-530){\fontsize{18}{1}\selectfont\color{white}
+        \textbf{\thesisdirector}}
+\end{picture}
+\end{titlepage}

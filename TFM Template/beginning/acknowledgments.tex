@@ -1,0 +1,14 @@
+% Se comienza una página nueva con formato plano (sin encabezado/pie de página pero con número de página):
+\newpage
+\thispagestyle{plain}
+
+\section*{Agradecimientos} % Se añade un asterisco a \section para que el título no esté numerado.
+\addcontentsline{toc}{section}{Agradecimientos} % Al utilizar \section* se ha de añadir manualmente el apartado al índice.
+
+Agradezco a \dots
+
+Gracias a \dots
+
+A \dots \ por \dots
+
+\afterpage{\blankpage} % Página en blanco después de los agradecimientos.
