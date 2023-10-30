@@ -6,6 +6,7 @@ Por otra parte, la estructura del informe se ha organizado en secciones, siguien
 * Desarrollo (la parte más variable, a gusto de cada persona -> arquitectura hardware, software, fases del proyecto, experimentos, etc.)
 * Resultados
 * Conclusiones
+
 Además, no podían faltar las otras secciones externas, tanto al principio (agradecimientos, citas y resumen) como al final (bibliografía y anexos) del documento.
 
 No se ha incluido apenas contenido visual, como tablas o gráficas, dejando a la libertad de cada usuario elegir su propio estilo.
